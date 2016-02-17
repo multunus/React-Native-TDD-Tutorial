@@ -8,8 +8,8 @@
 - Ready for test driven development
 - Ready for automated acceptance testing
 - Code quality metrics with Code Climate
-- Continous Integration using bitrise.io
-- Functional architecture (immutablity, hot reloading, time travelling)
+- Continuous Integration using bitrise.io
+- Functional architecture (immutability, hot reloading, time traveling)
 - Form validation
 
 ## Progress
@@ -22,7 +22,6 @@
 - [ ] Hot Reloading
 - [ ] Time traveling debugger
 - [ ] Default app structure
-
 
 ## Libraries
 - [React Native](https://facebook.github.io/react-native/)
@@ -56,7 +55,7 @@ Thank you, [contributors]!
 
 ## License
 
-$(PROJECT_NAME) is Copyright (c) 2016 Multunus Software Pvt. Ltd.
+React Native Boilerplate is Copyright (c) 2016 Multunus Software Pvt. Ltd.
 It is free software, and may be redistributed
 under the terms specified in the [LICENSE] file.
 
@@ -66,7 +65,7 @@ under the terms specified in the [LICENSE] file.
 
 ![multunus](https://s3.amazonaws.com/multunus-images/Multunus_Logo_Vector_resized.png)
 
-$(PROJECT_NAME) is maintained and funded by Multunus Software Pvt. Ltd.
+React Native Boilerplate is maintained and funded by Multunus Software Pvt. Ltd.
 The names and logos for Multunus are trademarks of Multunus Software Pvt. Ltd.
 
 We love open source software!
