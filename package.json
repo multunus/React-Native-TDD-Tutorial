@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
+    "test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive src/**/__specs__/*.spec.js",
+    "watch:test": "mocha --require react-native-mock/mock.js --compilers js:babel-core/register --recursive src/**/__specs__/*.spec.js --watch",
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
@@ -13,6 +15,13 @@
     "babel-eslint": "^5.0.0",
     "eslint": "^2.1.0",
     "eslint-plugin-react": "^3.16.1",
-    "eslint-plugin-react-native": "^1.0.0"
+    "eslint-plugin-react-native": "^1.0.0",
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "chai": "^3.5.0",
+    "react-addons-test-utils": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "enzyme": "^2.0.0",
+    "react-native-mock": "0.0.6"
   }
 }

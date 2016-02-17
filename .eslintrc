@@ -77,5 +77,13 @@
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2
   },
+  "globals": {
+    "after": false,
+    "afterEach": false,
+    "before": false,
+    "beforeEach": false,
+    "describe": false,
+    "it": false
+  },
   "extends": "eslint:recommended"
 }
