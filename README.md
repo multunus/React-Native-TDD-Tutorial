@@ -1,6 +1,6 @@
 # React Native Boilerplate
 
-> An opinionated boilerplate to setup a iOS/Android app skeleton. Configuring a sensible setup is a thing of the past now.
+> An opinionated boilerplate to setup a iOS/Android app skeleton. Manually configuring a sensible setup is a thing of the past now.
 
 ## Features
 - Ready for ES2015 and beyond
