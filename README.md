@@ -11,12 +11,14 @@
 - Continuous Integration using bitrise.io
 - Functional architecture (immutability, hot reloading, time traveling)
 - Form validation
+- Code coverage
 
 ## Progress
 Initially the boilerplate will support Android only.
 
 - [x] Javascript linting
 - [ ] Unit Testing setup
+- [ ] Code coverage
 - [ ] Continuous Integration setup
 - [ ] Automated acceptance testing setup
 - [ ] Form validation
@@ -37,6 +39,8 @@ Initially the boilerplate will support Android only.
 - [chai](http://chaijs.com/)
 - [sinon](http://sinonjs.org/)
 - [Enzyme](http://airbnb.io/enzyme/)
+- [nyc](https://github.com/bcoe/nyc)
+- [Calabash](http://calaba.sh/)
 - And more
 
 ## Usage
