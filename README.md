@@ -40,8 +40,8 @@
 ## Usage
 
 ```
-git clone https://github.com/multunus/react-native-boilerplate
-cd react-native-boilerplate
+git clone https://github.com/multunus/react-native-boilerplate ReactNativeBoilerplate
+cd ReactNativeBoilerplate
 npm install
 ```
 
