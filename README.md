@@ -22,6 +22,8 @@
 - [ ] Hot Reloading
 - [ ] Time traveling debugger
 - [ ] Default app structure
+- [ ] Android support
+- [ ] iOS support
 
 ## Libraries
 - [React Native](https://facebook.github.io/react-native/)
