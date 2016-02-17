@@ -83,7 +83,8 @@
     "before": false,
     "beforeEach": false,
     "describe": false,
-    "it": false
+    "it": false,
+    "require": false
   },
   "extends": "eslint:recommended"
 }
