@@ -17,8 +17,8 @@
 Initially the boilerplate will support Android only.
 
 - [x] Javascript linting
-- [ ] Unit Testing setup
-- [ ] Code coverage
+- [x] Unit Testing setup
+- [x] Code coverage
 - [ ] Continuous Integration setup
 - [ ] Automated acceptance testing setup
 - [ ] Form validation
