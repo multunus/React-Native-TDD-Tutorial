@@ -9,9 +9,11 @@
 - Ready for automated acceptance testing
 - Code quality metrics with Code Climate
 - Continuous Integration using bitrise.io
-- Functional architecture (immutability, hot reloading, time traveling)
+- Functional architecture (immutability, hot reloading)
 - Form validation
 - Code coverage
+- Data persistence
+- Navigation
 
 ## Progress
 Initially the boilerplate will support Android only.
@@ -19,13 +21,15 @@ Initially the boilerplate will support Android only.
 - [x] Javascript linting
 - [x] Unit Testing setup
 - [x] Code coverage
+- [x] Redux debugger
 - [ ] Continuous Integration setup
 - [ ] Automated acceptance testing setup
 - [ ] Form validation
 - [ ] Immutable data structures
 - [ ] Hot Reloading
-- [ ] Time traveling debugger
 - [ ] Default app structure
+- [ ] Navigation
+- [ ] Persistence
 
 ## Libraries
 - [React Native](https://facebook.github.io/react-native/)
