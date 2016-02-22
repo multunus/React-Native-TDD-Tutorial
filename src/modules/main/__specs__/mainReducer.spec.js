@@ -1,8 +1,8 @@
 import { fetchDataSuccess, fetchDataFail, setFetching } from './../actions';
 import reducer from './../reducer';
 
-describe('fetchData reducer', () => {
-  it('fetchData state should exist', () => {
+describe('main reducer', () => {
+  it('main state should exist', () => {
     expect(reducer(undefined, {})).to.exist;
   });
   it('should return the initial state', () => {
