@@ -86,6 +86,7 @@
     "fetch": false,
     "process": false,
     "expect": false,
+    "global": false,
     "require": false
   },
   "extends": "eslint:recommended"
