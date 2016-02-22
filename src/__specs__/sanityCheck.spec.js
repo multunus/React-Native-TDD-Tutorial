@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-describe('Sanity', () => {
+describe('sanity check', () => {
   it('should pass', () => {
     const test = true;
     expect(test).to.equal(true);
