@@ -81,7 +81,11 @@
     "before": false,
     "beforeEach": false,
     "describe": false,
+    "context": false,
     "it": false,
+    "fetch": false,
+    "process": false,
+    "expect": false,
     "require": false
   },
   "extends": "eslint:recommended"
