@@ -1,4 +1,5 @@
-import 'es6-symbol/implement';
+import 'es6-symbol/implement'; // Polyfill for ES6 symbol
+import { Map } from 'immutable';
 import { applyMiddleware, createStore } from 'redux';
 import reducers from './../modules/reducers';
 import sagaMiddleware from './../modules/sagas';
@@ -12,5 +13,5 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 export default function configureStore() {
-  return createStore(reducers, applyMiddleware(...middlewares));
+  return createStore(reducers, Map(), applyMiddleware(...middlewares));
 }

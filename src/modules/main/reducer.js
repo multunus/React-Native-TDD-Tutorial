@@ -1,19 +1,20 @@
+import { Map } from 'immutable';
 import { types } from './constants';
 
-const initialState = {
+const initialState = Map({
   isFetching: false,
   userToken: undefined,
   error: undefined,
-};
+});
 
 export default function main(state = initialState, action) {
   switch (action.type) {
   case types.SET_FETCHING:
-    return Object.assign({}, state, { isFetching: action.value });
+    return state.set('isFetching', action.value);
   case types.FETCH_DATA_SUCCESSFUL:
-    return Object.assign({}, state, { userToken: action.token });
+    return state.set('userToken', action.token);
   case types.FETCH_DATA_FAILED:
-    return Object.assign({}, state, { error: action.error });
+    return state.set('error', action.error);
   default:
     return state;
   }

@@ -5,7 +5,7 @@ import { fetchDataRequest } from './../../../modules/main/actions';
 
 const mapStateToProps = (state) => {
   return {
-    isFetching: state.main.isFetching,
+    isFetching: state.getIn(['main', 'isFetching']),
   };
 };
 
