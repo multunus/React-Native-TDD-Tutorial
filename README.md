@@ -1,5 +1,8 @@
 # React Native Boilerplate
 
+[![Code Climate](https://codeclimate.com/github/multunus/react-native-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/multunus/react-native-boilerplate)
+[![Test Coverage](https://codeclimate.com/github/multunus/react-native-boilerplate/badges/coverage.svg)](https://codeclimate.com/github/multunus/react-native-boilerplate/coverage)
+
 > An opinionated boilerplate to setup a iOS/Android app skeleton. Manually configuring a sensible setup is a thing of the past now.
 
 ## Features
