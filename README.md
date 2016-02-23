@@ -28,7 +28,7 @@ Initially the boilerplate will support Android only.
 - [ ] Continuous Integration setup
 - [ ] Automated acceptance testing setup
 - [ ] Form validation
-- [ ] Immutable data structures
+- [x] Immutable data structures
 - [ ] Hot Reloading
 - [ ] Default app structure
 - [ ] Navigation
