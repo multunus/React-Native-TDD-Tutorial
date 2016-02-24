@@ -1,8 +1,11 @@
 import 'es6-symbol/implement'; // Polyfill for ES6 symbol
+import { AsyncStorage } from 'react-native';
 import { applyMiddleware, createStore } from 'redux';
+import { persistStore, autoRehydrate } from 'redux-persist';
 import reducers from './../modules/reducers';
 import sagaMiddleware from './../modules/sagas';
 import { Iterable } from 'immutable';
+import reduxPersistImmutable from 'redux-persist-immutable';
 
 const middlewares = [sagaMiddleware];
 
@@ -25,6 +28,7 @@ if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger);
 }
 
-export default function configureStore() {
-  return createStore(reducers, applyMiddleware(...middlewares));
-}
+const store = autoRehydrate()(createStore)(reducers, applyMiddleware(...middlewares));
+persistStore(store, { storage: AsyncStorage, transforms: [reduxPersistImmutable] });
+
+export default store;
