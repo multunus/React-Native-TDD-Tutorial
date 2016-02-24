@@ -32,7 +32,7 @@ Initially the boilerplate will support Android only.
 - [ ] Hot Reloading
 - [ ] Default app structure
 - [ ] Navigation
-- [ ] Persistence
+- [x] Persistence
 
 ## Libraries
 - [React Native](https://facebook.github.io/react-native/)
