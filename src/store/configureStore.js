@@ -1,5 +1,4 @@
 import 'es6-symbol/implement'; // Polyfill for ES6 symbol
-import { Map } from 'immutable';
 import { applyMiddleware, createStore } from 'redux';
 import reducers from './../modules/reducers';
 import sagaMiddleware from './../modules/sagas';
@@ -9,8 +8,13 @@ const middlewares = [sagaMiddleware];
 
 if (process.env.NODE_ENV === 'development') {
   const stateTransformer = (state) => {
-    if (Iterable.isIterable(state)) return state.toJS();
-    else return state;
+    const logState = {};
+    for (let key in state) {
+      if (state.hasOwnProperty(key) && Iterable.isIterable(state[key])) {
+        logState[key] = state[key].toJS();
+      }
+    }
+    return logState;
   };
   const actionTransformer = (action) => {
     if (Iterable.isIterable(action.payload)) return { type: action.type, payload: action.payload.toJS() };
@@ -21,7 +25,6 @@ if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger);
 }
 
-
 export default function configureStore() {
-  return createStore(reducers, Map(), applyMiddleware(...middlewares));
+  return createStore(reducers, applyMiddleware(...middlewares));
 }
