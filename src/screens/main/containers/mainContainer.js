@@ -20,7 +20,8 @@ const mapDispatchToProps = (dispatch) => {
 class Main extends Component {
   render() {
     return (
-      <MainComponent isFetching={this.props.isFetching}
+      <MainComponent buttonText="Fetch Data"
+        isFetching={this.props.isFetching}
         onFetch={this.props.onFetch}
       />
     );

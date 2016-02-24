@@ -3,7 +3,7 @@ import commonStyles from './mainComponentStyles';
 
 const styles = StyleSheet.create(commonStyles);
 
-const MainComponent = ({ onFetch, isFetching }) => {
+const MainComponent = ({ onFetch, isFetching, buttonText }) => {
   if(isFetching) {
     return (
       <View style={styles.progressBar}>
@@ -18,7 +18,7 @@ const MainComponent = ({ onFetch, isFetching }) => {
         >
         <View style={styles.button}>
           <Text style={styles.text}>
-            Fetch Data
+            {buttonText}
           </Text>
         </View>
         </TouchableNativeFeedback>
