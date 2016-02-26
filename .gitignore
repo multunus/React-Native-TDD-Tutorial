@@ -37,3 +37,7 @@ npm-debug.log
 #
 coverage/
 .nyc_output
+
+# config
+#
+config.json

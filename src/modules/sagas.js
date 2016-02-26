@@ -1,5 +1,5 @@
 import createSagaMiddleware from 'redux-saga';
-import mainWatcher from './main/saga';
+import authWatcher from './auth/saga';
 
-const sagaMiddleware = createSagaMiddleware(mainWatcher);
+const sagaMiddleware = createSagaMiddleware(authWatcher);
 export default sagaMiddleware;

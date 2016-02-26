@@ -1,10 +1,10 @@
 import React, { Component } from 'react-native';
-import Main from './main/containers/mainContainer';
+import Auth from './auth/containers/authContainer';
 
 export default class Root extends Component {
   render() {
     return (
-      <Main />
+      <Auth />
     );
   }
 }

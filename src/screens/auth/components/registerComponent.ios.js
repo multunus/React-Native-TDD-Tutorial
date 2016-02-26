@@ -1,10 +1,13 @@
 import React, { ActivityIndicatorIOS, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
-import commonStyles from './mainComponentStyles';
+import commonStyles from './registerComponentStyles';
 
 const styles = StyleSheet.create(commonStyles);
 
-const MainComponent = ({ onFetch, isFetching, buttonText }) => {
-  if(isFetching) {
+const RegisterComponent = ({ onRegister, isRegistering, buttonText }) => {
+
+  const onPressRegister = () => onRegister({ username: 'username', password: 'password' });
+
+  if(isRegistering) {
     return (
       <View style={styles.progressBar}>
         <ActivityIndicatorIOS size="large"/>
@@ -13,7 +16,7 @@ const MainComponent = ({ onFetch, isFetching, buttonText }) => {
   } else {
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={onFetch}>
+        <TouchableHighlight onPress={onPressRegister}>
           <View style={styles.button}>
             <Text style={styles.text}>
               {buttonText}
@@ -25,4 +28,4 @@ const MainComponent = ({ onFetch, isFetching, buttonText }) => {
   }
 };
 
-export default MainComponent;
+export default RegisterComponent;

@@ -57,6 +57,9 @@ git clone https://github.com/multunus/react-native-boilerplate ReactNativeBoiler
 cd ReactNativeBoilerplate
 npm install
 ```
+Rename ```config.example.json``` to ```config.json``` and modify it as required.
+
+The app is setup to use the [NodeJS JWT Authentication sample server](https://github.com/auth0/nodejs-jwt-authentication-sample), follow the instructions and update the baseURL in ```config.json```.
 
 ## Contributing
 

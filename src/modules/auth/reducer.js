@@ -2,18 +2,18 @@ import { Map } from 'immutable';
 import { types } from './constants';
 
 const initialState = Map({
-  isFetching: false,
+  isRegistering: false,
   userToken: undefined,
   error: undefined,
 });
 
-export default function main(state = initialState, action) {
+export default function auth(state = initialState, action) {
   switch (action.type) {
-  case types.SET_FETCHING:
-    return state.set('isFetching', action.value);
-  case types.FETCH_DATA_SUCCESSFUL:
+  case types.SET_REGISTERING:
+    return state.set('isRegistering', action.value);
+  case types.REGISTER_USER_SUCCESS:
     return state.set('userToken', action.token);
-  case types.FETCH_DATA_FAILED:
+  case types.REGISTER_USER_FAIL:
     return state.set('error', action.error);
   default:
     return state;
