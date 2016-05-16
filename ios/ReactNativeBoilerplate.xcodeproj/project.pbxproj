@@ -726,7 +726,7 @@
 			};
 			name = Release;
 		};
-		BA138D2E1CDAFC3200ED32DE /* Staging */ = {
+		BA2C3EA61CE994BA00482925 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -766,7 +766,7 @@
 			};
 			name = Staging;
 		};
-		BA138D2F1CDAFC3200ED32DE /* Staging */ = {
+		BA2C3EA71CE994BA00482925 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -782,7 +782,7 @@
 			};
 			name = Staging;
 		};
-		BA138D301CDAFC3200ED32DE /* Staging */ = {
+		BA2C3EA81CE994BA00482925 /* Staging */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -807,7 +807,7 @@
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
 				00E356F71AD99517003FC87E /* Release */,
-				BA138D301CDAFC3200ED32DE /* Staging */,
+				BA2C3EA81CE994BA00482925 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -817,7 +817,7 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
-				BA138D2F1CDAFC3200ED32DE /* Staging */,
+				BA2C3EA71CE994BA00482925 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -827,7 +827,7 @@
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
 				83CBBA211A601CBA00E9B192 /* Release */,
-				BA138D2E1CDAFC3200ED32DE /* Staging */,
+				BA2C3EA61CE994BA00482925 /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
