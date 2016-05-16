@@ -689,6 +689,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.multunus.rnboilerplate.dev;
+				PRODUCT_NAME = "RN Boilerplate Dev";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -729,6 +731,8 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.multunus.rnboilerplate;
+				PRODUCT_NAME = "RN Boilerplate";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -770,6 +774,8 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.multunus.rnboilerplate.staging;
+				PRODUCT_NAME = "RN Boilerplate Staging";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
