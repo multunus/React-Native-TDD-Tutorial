@@ -39,15 +39,12 @@ Initially the boilerplate will support Android only.
 - [Redux](http://rackt.github.io/redux/)
 - [babeljs](https://babeljs.io/)
 - [immutablejs](http://facebook.github.io/immutable-js)
-- [react-native-router-flux](https://github.com/aksonov/react-native-router-flux)
 - [eslint](http://eslint.org/)
-- [chriso/validator.js](https://github.com/chriso/validator.js)
 - [mocha](https://mochajs.org/)
 - [chai](http://chaijs.com/)
 - [sinon](http://sinonjs.org/)
 - [Enzyme](http://airbnb.io/enzyme/)
 - [nyc](https://github.com/bcoe/nyc)
-- [Calabash](http://calaba.sh/)
 - And more
 
 ## Usage
