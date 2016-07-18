@@ -44,7 +44,7 @@
     "nyc": "^5.6.0",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^0.14.8",
-    "react-native-mock": "0.0.6",
+    "react-native-mock": "0.2.0",
     "remote-redux-devtools": "^0.1.2",
     "remotedev-server": "0.0.3",
     "sinon": "^1.17.3"
