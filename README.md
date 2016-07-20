@@ -973,7 +973,7 @@ TDD provides a tight feedback loop that cranks up our development workflow and i
 [17]: https://facebook.github.io/react-native/docs/listview.html
 [18]: https://facebook.github.io/react/docs/reusable-components.html
 [19]: http://airbnb.io/enzyme/docs/api/ShallowWrapper/simulate.html
-[20]: https://github.com/multunus/React_Native_TDD_tutorial
+[20]: https://github.com/multunus/React-Native-TDD-Tutorial
 [21]: https://www.thoughtworks.com/continuous-integration
 [22]: http://www.multunus.com/blog/2016/06/automated-environment-management-react-native-ios/
   </commentbox></app></app></app></commentbox></commentbox></commentbox></commentform></commentform></commentform></commentform></commentform></commentform></commentform></commentform></listview></commentlist></commentlist></commentlist></comment></comment></commentbox></commentbox></listview></commentlist></commentlist></commentform></commentform></commentbox></commentbox></comment>
