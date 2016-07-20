@@ -64,8 +64,8 @@ Okay, now it's time for coding. Let us write our first test. The components for 
 
     import Comment from '../Comment.js';
     
-    describe('<comment>', () =&gt; {
-     it('should be a view component', () =&gt; {
+    describe('<comment>', () => {
+     it('should be a view component', () => {
      const wrapper = shallow(<comment></comment>);
      
         expect(wrapper.type()).to.equal(View);
@@ -100,16 +100,16 @@ Now that we're all good to go, let's start with the topmost component in the com
 
     import CommentBox from '../CommentBox.js';
 
-    describe('<commentbox>', () =&gt; {
+    describe('<commentbox>', () => {
      beforeEach(function() {
      wrapper = shallow(<commentbox>);
      });
 
-     it('should be a view component', () =&gt; {
+     it('should be a view component', () => {
      expect(wrapper.type()).to.equal(View);
      });
 
-     it('should have a title Comment It', () =&gt; {
+     it('should have a title Comment It', () => {
      expect(wrapper.contains(<text>Comment It</text>)).to.equal(true);
       });
     });
@@ -141,8 +141,8 @@ We'll just define these components without working logic just for now, and come 
 
     import CommentForm from '../CommentForm.js';
     
-    describe('<commentform>', () =&gt; { 
-     it('should be a view component', () =&gt; {
+    describe('<commentform>', () => { 
+     it('should be a view component', () => {
      wrapper = shallow(<commentform>);
      
         expect(wrapper.type()).to.equal(View);
@@ -171,8 +171,8 @@ We'll just define these components without working logic just for now, and come 
 
     import CommentList from '../CommentList.js';
     
-    describe('<commentlist>', () =&gt; {
-     it('should be a ListView component', () =&gt; {
+    describe('<commentlist>', () => {
+     it('should be a ListView component', () => {
      const wrapper = shallow(<commentlist>);
      
         expect(wrapper.type()).to.equal(ListView);
@@ -203,24 +203,24 @@ Let's add them to CommentBox component. Add a couple of specs to CommentBox.spec
     import CommentList from '../CommentList.js';
     import CommentForm from '../CommentForm.js';
 
-    describe('<commentbox>', () =&gt; {
+    describe('<commentbox>', () => {
      beforeEach(function() {
      wrapper = shallow(<commentbox>);
      });
      
-     it('should be a view component', () =&gt; {
+     it('should be a view component', () => {
      expect(wrapper.type()).to.equal(View);
      });
     
-     it('should have a title Comment It', () =&gt; {
+     it('should have a title Comment It', () => {
      expect(wrapper.contains(<text>Comment It</text>)).to.equal(true);
      });
     
-     it('should render CommentList component', () =&gt; {
+     it('should render CommentList component', () => {
      expect(wrapper.find(CommentList)).to.have.length(1);
      });
     
-     it('should render CommentForm component', () =&gt; {
+     it('should render CommentForm component', () => {
      expect(wrapper.find(CommentForm)).to.have.length(1);
      });
     });
@@ -256,26 +256,26 @@ For each comment we'll pass author name of the comment and the actual comment as
 
     import Comment from '../Comment.js';
 
-    describe('<comment>', () =&gt; {
-     it('should be a view component', () =&gt; {
+    describe('<comment>', () => {
+     it('should be a view component', () => {
      const wrapper = shallow(<comment></comment>);
      
         expect(wrapper.type()).to.equal(View);
      });
 
-     it('should render 2 text components', () =&gt; {
+     it('should render 2 text components', () => {
      const wrapper = shallow(<comment>);
      
         expect(wrapper.find(Text)).to.have.length(2);
      });
 
-     it('should render the given comment', () =&gt; {
+     it('should render the given comment', () => {
      const wrapper = shallow(<comment> This is a comment </comment>);
 
      expect(wrapper.contains(<text> This is a comment </text>)).to.equal(true);
      });
 
-     it('should render the given author name', () =&gt; {
+     it('should render the given author name', () => {
      const wrapper = shallow(<comment author="Author"></comment>);
      
         expect(wrapper.contains(<text>Author</text>)).to.equal(true);
@@ -317,7 +317,7 @@ Feel free to refer docsif you have any questions on usage of [ListView][17].
     import CommentList from '../CommentList.js';
     import Comment from '../Comment.js';
 
-    describe('<commentlist>', () =&gt; {
+    describe('<commentlist>', () => {
      beforeEach(function() {
      data = [
      { author: "Pete Hunt", text: "This is one comment"},
@@ -326,17 +326,17 @@ Feel free to refer docsif you have any questions on usage of [ListView][17].
      ];
      });
 
-     it('should define its propTypes', () =&gt; {
+     it('should define its propTypes', () => {
      expect(CommentList.propTypes.data).to.be.an('function');
      });
 
-     it('should be a ListView component', () =&gt; {
+     it('should be a ListView component', () => {
      const wrapper = shallow(<commentlist data="{data}">);
      
         expect(wrapper.type()).to.equal(ListView);
      });
 
-     it('should have correct datasource in state', () =&gt; {
+     it('should have correct datasource in state', () => {
      const wrapper = shallow(<commentlist data="{data}">);
      
         expect(wrapper.state('dataSource')._dataBlob).to.equal(data);
@@ -357,7 +357,7 @@ Feel free to refer docsif you have any questions on usage of [ListView][17].
      super(props);
      this.state = {
      dataSource: new ListView.DataSource({rowHasChanged:
-    (r1, r2) =&gt; r1 !== r2}).cloneWithRows(this.props.data)
+    (r1, r2) => r1 !== r2}).cloneWithRows(this.props.data)
      };
      }
      
@@ -393,20 +393,20 @@ We can list comments but cannot add a new one. For that let us build the Comment
 
     import CommentForm from '../CommentForm.js';
 
-    describe('<commentform>', () =&gt; {
+    describe('<commentform>', () => {
       beforeEach(function() {
          wrapper = shallow(<commentform>);
       });
 
-      it('should be a view component', () =&gt; {
+      it('should be a view component', () => {
         expect(wrapper.type()).to.equal(View);
       });
 
-      it('should have 2 TextInput components', () =&gt; {
+      it('should have 2 TextInput components', () => {
         expect(wrapper.find(TextInput)).to.have.length(2);
       });
 
-      it('should have a submit button', () =&gt; {
+      it('should have a submit button', () => {
         expect(wrapper.find(TouchableNativeFeedback)).to.have.length(1);
         expect(wrapper.find(TouchableNativeFeedback).containsMatchingElement(<text>Submit</text>)).to.equal(true);
       });
@@ -474,49 +474,49 @@ Now lets make sure that state of the CommentForm component changes with data in 
 
     import CommentForm from '../CommentForm.js';
 
-    describe('<commentform>', () =&gt; {
+    describe('<commentform>', () => {
       beforeEach(function() {
         wrapper = shallow(<commentform>);
       });
 
-      it('should be a view component', () =&gt; {
+      it('should be a view component', () => {
         expect(wrapper.type()).to.equal(View);
       });
 
-      it('should have an initial state', () =&gt; {
+      it('should have an initial state', () => {
         expect(wrapper.state('name')).to.equal("");
         expect(wrapper.state('comment')).to.equal("");
       });
 
-      it('should have 2 TextInput components', () =&gt; {
+      it('should have 2 TextInput components', () => {
         expect(wrapper.find(TextInput)).to.have.length(2);
       });
 
-      it('should have a submit button', () =&gt; {
+      it('should have a submit button', () => {
         expect(wrapper.find(TouchableNativeFeedback)).to.have.length(1);
         expect(wrapper.find(TouchableNativeFeedback).containsMatchingElement(<text>Submit</text>)).to.equal(true);
       });
 
-      it('should have author input component with value dependent on state', () =&gt; {
+      it('should have author input component with value dependent on state', () => {
         wrapper.setState({name: 'JK'});
 
         expect(wrapper.find(TextInput).first().props().value).to.equal('JK');
       });
 
-      it('should have the comment input component with value dependent on state', () =&gt; {
+      it('should have the comment input component with value dependent on state', () => {
         wrapper.setState({comment: 'An awesome comment'});
 
         expect(wrapper.find(TextInput).at(1).props().value).to.equal('An awesome comment');
       });
 
-      it('should change state when the text of author input component changes', () =&gt; {
+      it('should change state when the text of author input component changes', () => {
         const authorInputComponent = wrapper.find('TextInput').first();
 
         authorInputComponent.simulate('ChangeText','wenger');
         expect(wrapper.state('name')).to.equal('wenger');
       });
 
-      it('should change state when the text of comment input component changes', () =&gt; {
+      it('should change state when the text of comment input component changes', () => {
         const commentInputComponent = wrapper.find('TextInput').at(1);
 
         commentInputComponent.simulate('ChangeText','arsenal');
@@ -541,10 +541,10 @@ Now lets make sure that state of the CommentForm component changes with data in 
             <view>
               <textinput placeholder="name" style="{{height:" 40,="" bordercolor:="" 'gray',="" borderwidth:="" 1}}="" onchangetext="{(text)" ==""> this.setState({name: text})}
                 value={this.state.name}
-              /&gt;
+              />
               <textinput placeholder="comment" style="{{height:" 40,="" bordercolor:="" 'gray',="" borderwidth:="" 1}}="" onchangetext="{(content)" ==""> this.setState({comment: content})}
                 value={this.state.comment}
-              /&gt;
+              />
               <touchablenativefeedback>
                 <view style="{{width:" 150,="" height:="" 100,="" backgroundcolor:="" 'red'}}="">
                   <text style="{{margin:" 30}}="">Submit</text>
@@ -568,40 +568,40 @@ Now that that's done we'll wire up submission of form on clicking submit button.
     import CommentForm from '../CommentForm.js';
     import CommentBox from '../CommentBox.js';
 
-    describe('<commentform>', () =&gt; {
+    describe('<commentform>', () => {
       beforeEach(function() {
         wrapper = shallow(<commentform>);
       });
 
-      it('should be a view component', () =&gt; {
+      it('should be a view component', () => {
         expect(wrapper.type()).to.equal(View);
       });
 
-      it('should have an initial state', () =&gt; {
+      it('should have an initial state', () => {
         expect(wrapper.state('name')).to.equal("");
         expect(wrapper.state('comment')).to.equal("");
       });
 
-      it('should have 2 TextInput components', () =&gt; {
+      it('should have 2 TextInput components', () => {
         expect(wrapper.find(TextInput)).to.have.length(2);
       });
 
-      it('should have a submit button', () =&gt; {
+      it('should have a submit button', () => {
         expect(wrapper.find(TouchableNativeFeedback)).to.have.length(1);
         expect(wrapper.find(TouchableNativeFeedback).containsMatchingElement(<text>Submit</text>)).to.equal(true);
       });
 
-      it('should have author input component with value dependent on state', () =&gt; {
+      it('should have author input component with value dependent on state', () => {
         wrapper.setState({name: 'JK'});
         expect(wrapper.find(TextInput).first().props().value).to.equal('JK');
       });
 
-      it('should have the comment input component with value dependent on state', () =&gt; {
+      it('should have the comment input component with value dependent on state', () => {
         wrapper.setState({comment: 'An awesome comment'});
         expect(wrapper.find(TextInput).at(1).props().value).to.equal('An awesome comment');
       });
 
-      it('should change state when the text of author input component changes', () =&gt; {
+      it('should change state when the text of author input component changes', () => {
         const authorInputComponent = wrapper.find('TextInput').first();
 
         authorInputComponent.simulate('ChangeText','wenger');
@@ -609,7 +609,7 @@ Now that that's done we'll wire up submission of form on clicking submit button.
         expect(wrapper.state('name')).to.equal('wenger');
       });
 
-      it('should change state when the text of comment input component changes', () =&gt; {
+      it('should change state when the text of comment input component changes', () => {
         const commentInputComponent = wrapper.find('TextInput').at(1);
 
         commentInputComponent.simulate('ChangeText','arsenal');
@@ -617,7 +617,7 @@ Now that that's done we'll wire up submission of form on clicking submit button.
         expect(wrapper.state('comment')).to.equal('arsenal');
       });
 
-      it('invokes handleCommitSubmit method of CommentBox with author and comment', () =&gt; {
+      it('invokes handleCommitSubmit method of CommentBox with author and comment', () => {
         sinon.stub(CommentBox.prototype, "handleCommentSubmit");
 
         const wrapper = shallow(<commentform oncommentsubmit="{CommentBox.prototype.handleCommentSubmit}/">);
@@ -631,7 +631,7 @@ Now that that's done we'll wire up submission of form on clicking submit button.
         CommentBox.prototype.handleCommentSubmit.restore();
       });
 
-      it('sets the state of two input fields to the initial state on press', () =&gt; {
+      it('sets the state of two input fields to the initial state on press', () => {
         sinon.stub(CommentBox.prototype, "handleCommentSubmit");
 
         const wrapper = shallow(<commentform oncommentsubmit="{CommentBox.prototype.handleCommentSubmit}/">);
@@ -667,11 +667,11 @@ Now that that's done we'll wire up submission of form on clicking submit button.
       <view>
        <textinput placeholder="name" style="{{height:" 40,="" bordercolor:="" 'gray',="" borderwidth:="" 1}}="" onchangetext="{(text)" ==""> this.setState({name: text})}
         value={this.state.name}
-       /&gt;
+       />
       <textinput placeholder="comment" style="{{height:" 40,="" bordercolor:="" 'gray',="" borderwidth:="" 1}}="" onchangetext="{(content)" ==""> this.setState({comment: content})}
        value={this.state.comment}
-      /&gt;
-      <touchablenativefeedback onpress="{()" ==""> this.onPressButton()}&gt;
+      />
+      <touchablenativefeedback onpress="{()" ==""> this.onPressButton()}>
        <view style="{{width:" 150,="" height:="" 100,="" backgroundcolor:="" 'red'}}="">
         <text style="{{margin:" 30}}="">Submit</text>
        </view>
@@ -704,37 +704,37 @@ We'll use [Asyncstorage][13] of React-Native to store and retrieve comments. We'
     import CommentList from '../CommentList.js';
     import CommentForm from '../CommentForm.js';
 
-    describe('<commentbox>', () =&gt; {
+    describe('<commentbox>', () => {
 
      beforeEach(function() {
        wrapper = shallow(<commentbox asyncstoragekey="{'comments'}">);
      });
 
-     it('should be a view component', () =&gt; {
+     it('should be a view component', () => {
        expect(wrapper.type()).to.equal(View);
      });
 
-     it('should have a title Comment It', () =&gt; {
+     it('should have a title Comment It', () => {
        expect(wrapper.contains(<text>Comment It</text>)).to.equal(true);
      });
 
-     it('should render comment list component', () =&gt; {
+     it('should render comment list component', () => {
        expect(wrapper.find(CommentList)).to.have.length(1);
      });
 
-     it('should render comment form component', () =&gt; {
+     it('should render comment form component', () => {
        expect(wrapper.find(CommentForm)).to.have.length(1);
      });
 
-     it('should have an initial state', () =&gt; {
+     it('should have an initial state', () => {
        expect(wrapper.state('data').length).to.equal(0);
      });
 
-     it('should pass its state data as props to commentlist component', () =&gt; {
+     it('should pass its state data as props to commentlist component', () => {
        expect(wrapper.find(CommentList).props().data).to.eql(wrapper.state('data'));
      });
 
-     it('should pass its handleCommentSubmit method as props to CommentForm component', () =&gt; {
+     it('should pass its handleCommentSubmit method as props to CommentForm component', () => {
        commentBox = new CommentBox();
 
        var definedMethod = commentBox.handleCommentSubmit;
@@ -743,8 +743,8 @@ We'll use [Asyncstorage][13] of React-Native to store and retrieve comments. We'
        expect(definedMethod.toString()).to.equal(passedMethod.toString());
      });
 
-     describe('handleCommentSubmit', () =&gt; {
-      it('stores comment data using asyncstorage on comment submit', () =&gt; {
+     describe('handleCommentSubmit', () => {
+      it('stores comment data using asyncstorage on comment submit', () => {
        var data = [
          { author: "Pete Hunt", text: "This is one comment"},
          { author: "Jordan Walke", text: "This is a super comment"},
@@ -812,9 +812,9 @@ That takes care of submitting comment part. Now lets do the comment loading part
     import CommentList from '../CommentList.js';
     import CommentForm from '../CommentForm.js';
 
-    describe('<commentbox>', () =&gt; {
-     describe('handleCommentSubmit', () =&gt; {
-       it('stores comment data using asyncstorage on comment submit', () =&gt; {
+    describe('<commentbox>', () => {
+     describe('handleCommentSubmit', () => {
+       it('stores comment data using asyncstorage on comment submit', () => {
          var data = [
           { author: "Pete Hunt", text: "This is one comment"},
           { author: "Jordan Walke", text: "This is a super comment"},
@@ -833,7 +833,7 @@ That takes care of submitting comment part. Now lets do the comment loading part
         expect(spy.calledWith('comments', JSON.stringify(data))).to.be.true;
      });
 
-     it('invokes the getComments method', () =&gt; {
+     it('invokes the getComments method', () => {
        var data = [
          { author: "Pete Hunt", text: "This is one comment"},
          { author: "Jordan Walke", text: "This is a super comment"},
@@ -871,11 +871,11 @@ That takes care of submitting comment part. Now lets do the comment loading part
 
      getComments() {
        AsyncStorage.getItem(this.props.asyncStorageKey)
-         .then((comments) =&gt; {
+         .then((comments) => {
            comments = JSON.parse(comments);
            this.setState({ data: comments });
          })
-        .catch(() =&gt; {
+        .catch(() => {
         });
      }
 
@@ -908,14 +908,14 @@ Let us create a component called App and render CommentBox component inside it. 
 
     import CommentBox from '../components/CommentBox.js';
     import App from '../app.js';
-    describe('<app>', () =&gt; {
-      it('should render a commentBox component', () =&gt; {
+    describe('<app>', () => {
+      it('should render a commentBox component', () => {
         const wrapper = shallow(<app>);
 
         expect(wrapper.find(CommentBox)).to.have.length(1);
       });
 
-      it('should pass data as props on rendering CommentBox component', () =&gt; {
+      it('should pass data as props on rendering CommentBox component', () => {
         const wrapper = shallow(<app>);
 
         expect(wrapper.find(CommentBox).props().asyncStorageKey).to.eql('comments');
@@ -942,7 +942,7 @@ Now register the component in the app registry and that's it.
 
     import { AppRegistry } from 'react-native';
     import App from './src/app';
-    AppRegistry.registerComponent('ReactNativeBoilerplate', () =&gt; App);
+    AppRegistry.registerComponent('ReactNativeBoilerplate', () => App);
 
 You can view the entire codebase [here][20] .
 
