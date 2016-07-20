@@ -954,6 +954,37 @@ Phew! That was a long exercise. We're proud that you completed it and happy for 
 
 TDD provides a tight feedback loop that cranks up our development workflow and improves quality and maintainability of code. TDD is one among many engineering practises that we follow here at Multunus. There are other practises that we follow, like [Continous Integration][21] and guess what. We've started integrating these concepts into our boilerplate too. Do checkout our blogpost about [Automated environment management in React Native – iOS][22].
 
+## Contributing
+
+See the [CONTRIBUTING] document.
+Thank you, [contributors]!
+
+  [CONTRIBUTING]: CONTRIBUTING.md
+  [contributors]: https://github.com/multunus/$(REPO_NAME)/graphs/contributors
+
+## License
+
+React Native Boilerplate is Copyright (c) 2016 Multunus Software Pvt. Ltd.
+It is free software, and may be redistributed
+under the terms specified in the [LICENSE] file.
+
+  [LICENSE]: /LICENSE
+
+## About
+
+![multunus](https://s3.amazonaws.com/multunus-images/Multunus_Logo_Vector_resized.png)
+
+React Native Boilerplate is maintained and funded by Multunus Software Pvt. Ltd.
+The names and logos for Multunus are trademarks of Multunus Software Pvt. Ltd.
+
+We love open source software!
+See [our other projects][community]
+or [hire us][hire] to help build your product.
+
+  [community]: http://www.multunus.com/community?utm_source=github
+  [hire]: http://www.multunus.com/contact?utm_source=github
+
+
 [1]: https://babeljs.io/
 [2]: https://mochajs.org/
 [3]: https://nodejs.org/en/
@@ -976,4 +1007,3 @@ TDD provides a tight feedback loop that cranks up our development workflow and i
 [20]: https://github.com/multunus/React-Native-TDD-Tutorial
 [21]: https://www.thoughtworks.com/continuous-integration
 [22]: http://www.multunus.com/blog/2016/06/automated-environment-management-react-native-ios/
-  </commentbox></app></app></app></commentbox></commentbox></commentbox></commentform></commentform></commentform></commentform></commentform></commentform></commentform></commentform></listview></commentlist></commentlist></commentlist></comment></comment></commentbox></commentbox></listview></commentlist></commentlist></commentform></commentform></commentbox></commentbox></comment>
