@@ -58,6 +58,7 @@ We will have the following component hierarchy
 
 Okay, now it's time for coding. Let us write our first test. The components for the app are written in `src/components` directory and the corresponding tests for components are written in `src/components/__specs__` directory. Open a new file `src/components/__specs__/Comment.spec.js` and write the following code.
 
+```js
     import React, { View } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -71,6 +72,7 @@ Okay, now it's time for coding. Let us write our first test. The components for 
         expect(wrapper.type()).to.equal(View);
      });
     });
+```
 
 That is a simple test to begin with. Let's checkout what is going on here. We are using [shallow rendering API][14] of enzyme here. It is useful to constrain yourself to testing a component as a unit, and to ensure that your tests aren't indirectly asserting on behaviour of child components. `shallow()` method returns a shallow wrapper object around the component that is to be tested. Enzyme provides a rich set of methods that can be called on the wrapper instance, for testing various aspects of a component. Check out the [docs][14] . In this spec we are just checking the type of the component.
 
@@ -94,6 +96,7 @@ Now that we're all good to go, let's start with the topmost component in the com
 
 `src/components/__specs__/CommentBox.spec.js`
 
+```js
     import React, { View, Text } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -113,11 +116,13 @@ Now that we're all good to go, let's start with the topmost component in the com
      expect(wrapper.contains(<text>Comment It</text>)).to.equal(true);
       });
     });
+```
 
 These tests describe CommentBox to be a View component and have a Text component inside it. We'll write minimal amount of code to make this test pass. and a Text component with the text "Comment It" in it. Now the actual code.
 
 `src/components/CommentBox.js`
 
+```js
     import React, {Component, Text, View } from 'react-native';
 
     export default class CommentBox extends React.Component {
@@ -129,6 +134,7 @@ These tests describe CommentBox to be a View component and have a Text component
      );
      }
     }
+```
 
 We need a CommentList and CommentForm component inside our CommentBox.  
 We'll just define these components without working logic just for now, and come back to these components and complete them later.
@@ -151,6 +157,7 @@ We'll just define these components without working logic just for now, and come 
 
 `src/components/CommentForm.js`
 
+```js
     import React, {Component, View } from 'react-native';
 
     export default class CommentForm extends React.Component {
@@ -161,9 +168,10 @@ We'll just define these components without working logic just for now, and come 
      );
      }
     }
+```
 
 `src/components/__specs__/CommentList.spec.js`
-
+```js
     import React, { ListView } from 'react-native';
 
     import { shallow } from 'enzyme';
@@ -178,9 +186,10 @@ We'll just define these components without working logic just for now, and come 
         expect(wrapper.type()).to.equal(ListView);
      });
     });
+```
 
 `src/components/CommentList.js`
-
+```js
     import React, {Component, ListView} from 'react-native';
 
     export default class CommentList extends React.Component {
@@ -190,11 +199,12 @@ We'll just define these components without working logic just for now, and come 
      );
      }
     }
+```
 
 Let's add them to CommentBox component. Add a couple of specs to CommentBox.spec.js as follows  
 
 `src/components/__specs__/CommentBox.spec.js`
-
+```js
     import React, { View, Text } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -224,9 +234,10 @@ Let's add them to CommentBox component. Add a couple of specs to CommentBox.spec
      expect(wrapper.find(CommentForm)).to.have.length(1);
      });
     });
+```
 
 `src/components/CommentBox.js`
-
+```js
     import React, {Component,Text, View} from 'react-native';
 
     import CommentList from './CommentList.js';
@@ -243,13 +254,13 @@ Let's add them to CommentBox component. Add a couple of specs to CommentBox.spec
      );
      }
     }
-
+```
 Now that we have the whole structure in place, we'll implement with the functionality starting with Comment component.
 
 For each comment we'll pass author name of the comment and the actual comment as props. Comment component should take these props and render both the author name and actual comment.
 
 `src/components/__specs__/Comment.spec.js`
-
+```js
     import React, { View, Text } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -281,9 +292,10 @@ For each comment we'll pass author name of the comment and the actual comment as
         expect(wrapper.contains(<text>Author</text>)).to.equal(true);
      });
     });
+```
 
 `src/components/Comment.js`
-
+```js
     import React, {Component, View, Text} from 'react-native';
 
     export default class Comment extends React.Component {
@@ -300,7 +312,7 @@ For each comment we'll pass author name of the comment and the actual comment as
      );
      }
     }
-
+```
 Aha! We have successfully test-driven our first React Native component.
 
 
@@ -309,7 +321,7 @@ Since we have comments now, let's list them out in our CommentList component. Th
 Feel free to refer docsif you have any questions on usage of [ListView][17].
 
 `src/components/__specs__/CommentList.spec.js`
-
+```js
     import React, { View, ListView } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -342,9 +354,10 @@ Feel free to refer docsif you have any questions on usage of [ListView][17].
         expect(wrapper.state('dataSource')._dataBlob).to.equal(data);
      });
     });
+```
 
 `src/components/CommentList.js`
-
+```js
     import React, {Component, View, ListView} from 'react-native';
     import Comment from './Comment.js';
 
@@ -378,6 +391,7 @@ Feel free to refer docsif you have any questions on usage of [ListView][17].
      );
      }
     }
+```
 
 Every time the CommentList component gets re-rendered, we need to update the dataSource state of the component to display newly added comment to the CommentList. We are just doing that in `componentWillReceiveProps` method.
 
@@ -386,7 +400,7 @@ Note that we wrote a spec to ensure that the propTypes of the component is defin
 We can list comments but cannot add a new one. For that let us build the CommentForm component. It has two text input fields to input author name and actual comment and a submit button to submit the comment. Let's build the basic UI of this component and then build the functionality.
 
 `src/components/__specs__/CommentForm.spec.js`
-
+```js
     import React, { View, TouchableNativeFeedback, TextInput, Text } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -411,9 +425,10 @@ We can list comments but cannot add a new one. For that let us build the Comment
         expect(wrapper.find(TouchableNativeFeedback).containsMatchingElement(<text>Submit</text>)).to.equal(true);
       });
     });
+```
 
 `src/components/CommentForm.js`
-
+```js
     import React, {Component, View, TouchableNativeFeedback, Text, TextInput} from 'react-native';
 
     export default class CommentForm extends React.Component {
@@ -431,7 +446,7 @@ We can list comments but cannot add a new one. For that let us build the Comment
         );
       }
     }
-
+```
 The functionality of the CommentForm component is as follows.
 
 * The input value of two TextInput components for entering author and comment should depend on state of the CommentForm component.
@@ -441,7 +456,7 @@ The functionality of the CommentForm component is as follows.
 For time- being let us define an empty method in CommentBox component.
 
 `src/components/CommentBox.js`
-
+```js
     import React, {Component,Text, View} from 'react-native';
 
     import CommentList from './CommentList.js';
@@ -462,11 +477,12 @@ For time- being let us define an empty method in CommentBox component.
         );
       }
     }
+```
 
 Now lets make sure that state of the CommentForm component changes with data in the input fields and the value of the input components are dependent on state.
 
 `src/components/__specs__/CommentForm.spec.js`
-
+```js
     import React, { View, TouchableNativeFeedback, TextInput, Text} from 'react-native';
 
     import { shallow } from 'enzyme';
@@ -524,9 +540,10 @@ Now lets make sure that state of the CommentForm component changes with data in 
         expect(wrapper.state('comment')).to.equal('arsenal');
       });
     });
+```
 
 ` ``src/components/CommentForm.js`
-
+```js
     import React, {Component, View, TouchableNativeFeedback, Text, TextInput} from 'react-native';
 
     export default class CommentForm extends React.Component {
@@ -554,11 +571,12 @@ Now lets make sure that state of the CommentForm component changes with data in 
         );
       }
     }
+```
 
 Now that that's done we'll wire up submission of form on clicking submit button. We must ensure that the submit button click should restore the state of two input components to initial state.
 
 `src/components/__specs__/CommentForm.spec.js`
-
+```js
     import React, { View, TouchableNativeFeedback, TextInput, Text} from 'react-native';
 
     import { shallow } from 'enzyme';
@@ -647,9 +665,10 @@ Now that that's done we'll wire up submission of form on clicking submit button.
         CommentBox.prototype.handleCommentSubmit.restore();
       });
     });
+```
 
 `src/components/CommentForm.js`
-
+```js
     import React, {Component, View, TouchableNativeFeedback, Text, TextInput} from 'react-native';
 
     export default class CommentForm extends React.Component {
@@ -687,14 +706,14 @@ Now that that's done we'll wire up submission of form on clicking submit button.
       this.props.onCommentSubmit({author: author, text: comment});
      }
     }
-
+```
 Observe how we test the behaviour of components on user interaction. We use [simulate()][19] method provided by shallow rendering API of enzyme to simulate the `press` event here. This method can be used to test other types of user interactions as well.
 
 CommentBox component is where everything is wired up together. It should pass a list of comment data to CommentList as props and also handle storing the comments when submitted from CommentForm.  
 We'll use [Asyncstorage][13] of React-Native to store and retrieve comments. We'll start with getting the comments and passing them to CommentList. The key for AsyncStorage data collection will be passed as props to CommentBox from app's root component. Let us take care of submitting of a comment first .
 
 `src/components/__specs__/CommentBox.spec.js`
-
+```js
     import React, { View, Text, AsyncStorage } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -764,9 +783,9 @@ We'll use [Asyncstorage][13] of React-Native to store and retrieve comments. We'
       });
      });
     });
-
+```
 `src/components/CommentBox.js`
-
+```js
     import React, {Component, Text, View, AsyncStorage } from 'react-native';
     import CommentList from './CommentList.js';
     import CommentForm from './CommentForm.js';
@@ -798,11 +817,11 @@ We'll use [Asyncstorage][13] of React-Native to store and retrieve comments. We'
         );
       }
     }
-
+```
 That takes care of submitting comment part. Now lets do the comment loading part
 
 `src/components/__specs__/CommentBox.spec.js`
-
+```js
     import React, { View, Text, AsyncStorage } from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -850,9 +869,10 @@ That takes care of submitting comment part. Now lets do the comment loading part
        });
       });
      });
+```
 
 `src/components/CommentBox.js`
-
+```js
     import React, {Component,Text, View, AsyncStorage } from 'react-native';
     import CommentList from './CommentList.js';
     import CommentForm from './CommentForm.js';
@@ -896,12 +916,12 @@ That takes care of submitting comment part. Now lets do the comment loading part
       );
      }
     }
-
+```
 To get the app up and running we need to have a root component and register it in the App registry  
 Let us create a component called App and render CommentBox component inside it. While rendering the CommentBox component, we pass in the AsyncStorage key as props.
 
 `src/__specs__/app.spec.js`
-
+```js
     import React from 'react-native';
     import { shallow } from 'enzyme';
     import { expect } from 'chai';
@@ -921,9 +941,10 @@ Let us create a component called App and render CommentBox component inside it. 
         expect(wrapper.find(CommentBox).props().asyncStorageKey).to.eql('comments');
       });
     });
+```
 
 `src/components/app.js`
-
+```js
     import React, { Component } from 'react-native';
     import CommentBox from './components/CommentBox.js';
 
@@ -935,15 +956,15 @@ Let us create a component called App and render CommentBox component inside it. 
         );
       }
     }
-
+```
 Now register the component in the app registry and that's it.
 
 `index.android.js`
-
+```js
     import { AppRegistry } from 'react-native';
     import App from './src/app';
     AppRegistry.registerComponent('ReactNativeBoilerplate', () => App);
-
+```
 You can view the entire codebase [here][20] .
 
 * * *
